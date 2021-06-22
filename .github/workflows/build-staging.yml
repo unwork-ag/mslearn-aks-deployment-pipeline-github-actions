@@ -46,7 +46,9 @@ jobs:
         with:
           # Build's context is the set of files located in the specified PATH or URL
           context: .
+          push: true
           # List of tags
-          tags: ${{ secrets.ACR_NAME }}//contoso-website:latest
+          #tags: ${{ secrets.ACR_NAME }}//contoso-website:latest
+          tags: ${{ steps.meta.outputs.tags }}
           # Sets the target stage to build
           repository: contoso-website
